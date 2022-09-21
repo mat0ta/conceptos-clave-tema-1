@@ -1,16 +1,31 @@
 class Punto():
     def __init__(self):
+        self.puntos = []
+        self.x = 0
+        self.y = 0
         while True:
             try:
-                x = int(input('Introduce la coordenada X: '))
-                self.x = x
-                y = int(input('Introduce la coordenada Y: '))
-                self.y = y
+                self.n_puntos = int(input('Introduce el número de puntos que quieres crear: '))
+                for i in range(self.n_puntos):
+                    punto = input('Introduce las coordenadas del punto {} separados por una coma: '.format(i + 1))
+                    self.puntos.append(punto.split(','))
                 break
             except ValueError:
                 print('Introduce un número porfavor.')
     def __str__(self):
-        return "({},{})".format(self.x, self.y)
+        for i in range(self.n_puntos):
+            self.x = int(self.puntos[i][0])
+            self.y = int(self.puntos[i][1])
+            print("El punto {} se encuentra en el {}".format(i + 1, self.cuadrante()))
+        while True:
+            try:
+                numero = int(input('Introduce el número del punto que quieres utilizar para el resto del ejericio: '))
+                self.x = int(self.puntos[numero - 1][0])
+                self.y = int(self.puntos[numero - 1][1])
+                break
+            except ValueError:
+                print('Introduce un número porfavor.')
+        return("El punto seleccionado es: ({},{})".format(self.x, self.y))
 
     def cuadrante(self):
         if self.x == 0 and self.y == 0:
@@ -35,10 +50,11 @@ class Punto():
     def vector(self):
         while True:
             try:
-                x = int(input('Introduce la coordenada X del segundo punto (Vector): '))
-                x_2 = x
-                y = int(input('Introduce la coordenada Y del primer punto (Vector): '))
-                y_2 = y
+                for i in range(self.n_puntos):
+                    print("{}: ({}, {})".format(i + 1, self.puntos[i][0], self.puntos[i][1]))
+                decision = int(input('Introduce el numero del punto que quieres usar como segundo punto (Vector): '))
+                x_2 = int(self.puntos[decision - 1][0])
+                y_2 = int(self.puntos[decision - 1][1])
                 break
             except ValueError:
                 print('Introduce un número porfavor.')
@@ -47,10 +63,11 @@ class Punto():
     def distancia(self):
         while True:
             try:
-                x = int(input('Introduce la coordenada X del segundo punto (Distancia): '))
-                x_2 = x
-                y = int(input('Introduce la coordenada Y del primer punto (Distancia): '))
-                y_2 = y
+                for i in range(self.n_puntos):
+                    print("{}: ({}, {})".format(i + 1, self.puntos[i][0], self.puntos[i][1]))
+                decision = int(input('Introduce el numero del punto que quieres usar como segundo punto (Distancia): '))
+                x_2 = int(self.puntos[decision - 1][0])
+                y_2 = int(self.puntos[decision - 1][1])
                 break
             except ValueError:
                 print('Introduce un número porfavor.')
