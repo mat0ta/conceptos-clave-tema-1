@@ -68,13 +68,6 @@ class Punto():
                 print('Introduce un número porfavor.')
         return((x_2 - self.x)**2 + (y_2 - self.y)**2)**0.5
 
-if __name__ == "__main__":
-    p = Punto()
-    print(p)
-    print(p.cuadrante())
-    print(p.vector())
-    print(p.distancia())
-
 ```
 
 <h2>Ejercicio del rectángulo</h2>
@@ -102,12 +95,5 @@ class Rectangulo():
         return("La altura del rectangulo tiene como coordenadas iniciales: ({}, {}) y como coordenadas finales: ({}, {})".format(self.inicial[0], self.inicial[1], self.inicial[0], self.final[1]))
     def area(self):
         return("El area del rectangulo es de {} unidades".format(abs((int(self.final[0]) - int(self.inicial[0])) * (int(self.final[1]) - int(self.inicial[1])))))
-
-if __name__ == "__main__":
-    r = Rectangulo()
-    print(r.base())
-    print(r.altura())
-    print(r.area())
-
 ```
 
