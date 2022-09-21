@@ -59,6 +59,6 @@ class Punto():
 if __name__ == "__main__":
     p = Punto()
     print(p)
-    print(p.cuadrante())
-    print(p.vector())
-    print(p.distancia())
+    print("El punto se encuentra en el {}".format(p.cuadrante()))
+    print("El vector creado entre los puntos es: {}".format(p.vector()))
+    print("La distancia entre los puntos es de: {}".format(p.distancia()))
