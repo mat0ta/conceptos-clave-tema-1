@@ -15,9 +15,3 @@ class Rectangulo():
         return("La altura del rectangulo tiene como coordenadas iniciales: ({}, {}) y como coordenadas finales: ({}, {})".format(self.inicial[0], self.inicial[1], self.inicial[0], self.final[1]))
     def area(self):
         return("El area del rectangulo es de {} unidades".format(abs((int(self.final[0]) - int(self.inicial[0])) * (int(self.final[1]) - int(self.inicial[1])))))
-
-if __name__ == "__main__":
-    r = Rectangulo()
-    print(r.base())
-    print(r.altura())
-    print(r.area())

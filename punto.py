@@ -55,10 +55,3 @@ class Punto():
             except ValueError:
                 print('Introduce un número porfavor.')
         return((x_2 - self.x)**2 + (y_2 - self.y)**2)**0.5
-
-if __name__ == "__main__":
-    p = Punto()
-    print(p)
-    print("El punto se encuentra en el {}".format(p.cuadrante()))
-    print("El vector creado entre los puntos es: {}".format(p.vector()))
-    print("La distancia entre los puntos es de: {}".format(p.distancia()))
